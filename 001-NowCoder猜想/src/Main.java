@@ -37,6 +37,7 @@ public class Main {
         mark[0] = true;
         mark[1] = true;
 
+        // 标记质数
         for (int i = 2; i < mark.length; i++) {
             // i是质数
             if (!mark[i]) {
@@ -46,6 +47,7 @@ public class Main {
             }
         }
 
+        // 统计质数个数
         int count = 0;
         for (int i = 2; i < mark.length; i++) {
             if (!mark[i]) {

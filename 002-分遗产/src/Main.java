@@ -42,6 +42,11 @@ public class Main {
 
     /**
      * 分遗产
+     * <p>
+     * 思路：
+     * 一、先求出arr的最小公倍数v
+     * 二、求最小公倍数的倍数times，使得times * v / arr[i]的和（记为sum）不小于hours
+     * 三、如果找到sum=hours，说明找到分配方案，否则没有找到分配方案
      *
      * @param hours 遗产中的马匹数
      * @param arr   每个儿子所得马匹的几分之几
@@ -57,6 +62,7 @@ public class Main {
             v = lcm(v, arr[i]);
         }
 
+        //
         long sum;
         long[] result = new long[arr.length];
         for (int times = 1; ; times++) {

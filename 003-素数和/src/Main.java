@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -31,34 +29,39 @@ public class Main {
         // 标记是否是素数
         // false表示是素数
         // true表示不是素数
+        // 下标为0和1的不使用
         boolean[] mark = new boolean[NUM];
 
-        mark[0] = true;
-        mark[1] = true;
 
-        for (int i = 2; i < mark.length; i++) {
+        // 取出[1, NUM]中的所有素数
+        int[] primes = new int[NUM];
+        // 记录素数个数
+        int count = 0;
+        for (int i = 2; i < NUM; i++) {
             // i是质数
             if (!mark[i]) {
-                for (int j = 2 * i; j < mark.length; j += i) {
+                // 记录素数
+                primes[count] = i;
+                count++;
+
+                // 标记不是素数的
+                for (int j = 2 * i; j < NUM; j += i) {
                     mark[j] = true;
                 }
             }
         }
-        List<Integer> list = new ArrayList<>();
 
-        for (int i = 2; i < mark.length; i++) {
-            if (!mark[i]) {
-                list.add(i);
-            }
-        }
-
+        // 求[0, NUM]中，每个数字可以用几组素数表示
         int v;
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-
-                v = list.get(i) + list.get(j);
+        for (int i = 0; i < count; i++) {
+            for (int j = i + 1; j < count; j++) {
+                v = primes[i] + primes[j];
                 if (v < NUM) {
                     ANS[v]++;
+                }
+                // 已经大于NUM说明后面的数还会大于NUM，所以要退出内层循环
+                else {
+                    break;
                 }
             }
         }

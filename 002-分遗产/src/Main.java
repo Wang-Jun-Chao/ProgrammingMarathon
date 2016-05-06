@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNextLine()) {
 
             String line = scanner.nextLine();
@@ -21,7 +21,7 @@ public class Main {
 
             String[] parts = line.split("(\\s)+");
             // 马匹数
-            int hours = Integer.parseInt(parts[0]);
+            long hours = Long.parseLong(parts[0]);
             // 儿子数
             int num = Integer.parseInt(parts[1]);
 
@@ -47,18 +47,18 @@ public class Main {
      * @param arr   每个儿子所得马匹的几分之几
      * @return 遗产划分结果
      */
-    private static String heritage(int hours, int[] arr) {
+    private static String heritage(long hours, int[] arr) {
 
         // 其实hours可以不使用
 
-        int v = arr[0];
+        long v = arr[0];
         // 求数组中所有元素的最小公倍数
         for (int i = 1; i < arr.length; i++) {
             v = lcm(v, arr[i]);
         }
 
-        int sum;
-        int[] result = new int[arr.length];
+        long sum;
+        long[] result = new long[arr.length];
         for (int times = 1; ; times++) {
             sum = 0;
 
@@ -76,7 +76,7 @@ public class Main {
             return "Can't Solve";
         } else {
             StringBuilder b = new StringBuilder();
-            for (int i : result) {
+            for (long i : result) {
                 b.append(i).append(' ');
             }
 
@@ -91,7 +91,7 @@ public class Main {
      * @param b 正整数
      * @return 最小倍约数
      */
-    private static int lcm(int a, int b) {
+    private static long lcm(long a, long b) {
         return a * b / gcd(a, b);
     }
 
@@ -102,9 +102,9 @@ public class Main {
      * @param b 正整数
      * @return 最大公约数
      */
-    private static int gcd(int a, int b) {
+    private static long gcd(long a, long b) {
 
-        int t;
+        long t;
         // 辗转相除
         while ((t = a % b) != 0) {
             a = b;

@@ -19,9 +19,39 @@ public class Main {
         scanner.close();
     }
 
+    /**
+     * 计算[1-n]中包含数字1的数字个数
+     * <p>
+     * TODO 请高手解释下面的代码
+     *
+     * @param n 最在范围
+     * @return 包含数字1的数字个数
+     */
     private static int countOne(int n) {
 
+        int countedN = 0;
+        int result = 0;
 
-        return 0;
+        // 以数字n（假设其表示为：abcdef）为例
+        // i表示每一位上的权重，f为第一位，权重为1，e为第二位，权重为10，d为第三位权重是100，以此类推
+        // cur表求当前处理的位的数值，表示a、b、c、d、e、f
+        //
+        for (int i = 1, onesPerI = 0, cur; n != 0; onesPerI = onesPerI * 9 + i, i *= 10, n /= 10) {
+
+            cur = n % 10;
+
+            if (cur == 0) {
+                continue;
+            } else if (cur == 1) {
+                result = onesPerI + countedN + 1;
+            } else {
+                result += (cur - 1) * onesPerI + i;
+            }
+
+            countedN += cur * i;
+
+        }
+
+        return result;
     }
 }

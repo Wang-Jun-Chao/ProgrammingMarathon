@@ -62,7 +62,7 @@ public class Main {
             v = lcm(v, arr[i]);
         }
 
-        //
+        // 求最小公倍数的倍数times，使得times * v / arr[i]的和（记为sum）不小于hours
         long sum;
         long[] result = new long[arr.length];
         for (int times = 1; ; times++) {
@@ -78,6 +78,7 @@ public class Main {
             }
         }
 
+        // 如果找到sum=hours，说明找到分配方案，否则没有找到分配方案
         if (sum != hours) {
             return "Can't Solve";
         } else {

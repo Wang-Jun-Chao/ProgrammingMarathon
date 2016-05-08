@@ -13,8 +13,9 @@ public class Main {
         Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             long n = scanner.nextLong();
-            long r = countOne(n);
-            System.out.println(r);
+//            System.out.println(countOne(n));
+//            System.out.println(countOne2(n));
+            System.out.println(countOne3(n));
         }
 
         scanner.close();
@@ -27,7 +28,7 @@ public class Main {
      * @param n 最大的数字
      * @return 1出现的次数
      */
-    private static long countOne3(long n) {
+    private static long countOne(long n) {
         long count = 0;
         for (int i = 0, j; i <= n; i++) {
             j = i;
@@ -43,12 +44,12 @@ public class Main {
 
     /**
      * 统计1出现的次数
-     * 见word解法一
+     * 见word解法二
      *
      * @param n 最大的数字
      * @return 1出现的次数
      */
-    private static long countOne(long n) {
+    private static long countOne2(long n) {
         if (n <= 0) {
             return 0;
         } else if (n < 10) {
@@ -79,5 +80,35 @@ public class Main {
             }
             return count;
         }
+    }
+
+    /**
+     * 【最佳解法】
+     * 统计1出现的次数
+     * 见word解法三
+     *
+     * @param n 最大的数字
+     * @return 1出现的次数
+     */
+    private static long countOne3(long n) {
+        long count = 0;
+        long i = 1;
+        long current = 0, after = 0, before = 0;
+        while ((n / i) != 0) {
+            current = (n / i) % 10;
+            before = n / (i * 10);
+            after = n - (n / i) * i;
+
+            System.out.println(after + " " + before);
+            if (current > 1) {
+                count = count + (before + 1) * i;
+            } else if (current == 0) {
+                count = count + before * i;
+            } else if (current == 1) {
+                count = count + before * i + after + 1;
+            }
+            i *= 10;
+        }
+        return count;
     }
 }

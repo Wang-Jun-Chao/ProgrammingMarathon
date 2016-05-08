@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             long n = scanner.nextLong();
 //            System.out.println(countOne(n));
@@ -99,7 +99,6 @@ public class Main {
             before = n / (i * 10);
             after = n - (n / i) * i;
 
-            System.out.println(after + " " + before);
             if (current > 1) {
                 count = count + (before + 1) * i;
             } else if (current == 0) {

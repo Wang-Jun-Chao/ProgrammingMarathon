@@ -26,6 +26,25 @@ public class Main {
      * @return 数根
      */
     private static int solve(String num) {
-        return 0;
+
+
+        int n = 0;
+
+        for (int i = 0; i < num.length(); i++) {
+            n += num.charAt(i) - '0';
+        }
+
+        int i;
+        int t;
+        while (n >= 10) {
+            i = n;
+            t = 0;
+            while (i != 0) {
+                t += i % 10;
+                i /= 10;
+            }
+            n = t;
+        }
+        return n;
     }
 }

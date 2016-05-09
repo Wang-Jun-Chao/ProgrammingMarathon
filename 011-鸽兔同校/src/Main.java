@@ -145,7 +145,7 @@ public class Main {
         if (m.length > n.length) {
             int[] t = m;
             m = n;
-            n = m;
+            n = t;
         }
 
         // 结果的最大长度
@@ -161,7 +161,7 @@ public class Main {
 
         // 计算余下的部分
         for (int i = m.length; i < n.length; i++) {
-            r[i] = m[i] + c;
+            r[i] = n[i] + c;
             c = r[i] / 10;
             r[i] %= 10;
         }

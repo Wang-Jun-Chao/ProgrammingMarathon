@@ -13,8 +13,6 @@ public class Main {
 //        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             String n = scanner.next();
-//            System.out.println(countOne(n));
-//            System.out.println(countOne2(n));
             System.out.println(cycleNumber(n));
         }
 

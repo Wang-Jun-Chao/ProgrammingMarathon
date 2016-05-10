@@ -1,8 +1,9 @@
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 import java.util.Scanner;
 
 /**
+ * 解法一
  * Author: 王俊超
  * Time: 2016-05-09 18:58
  * CSDN: http://blog.csdn.net/derrantcm
@@ -11,22 +12,19 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        while (scanner.hasNext()) {
+            // 迷宫大小
+            int col = scanner.nextInt();
+            int row = scanner.nextInt();
+            // 剩余时间
+            int time = scanner.nextInt();
 
-            if (line.contains("0 0 0")) {
+            if (row == 0 && col == 0 && time == 0) {
                 break;
             }
 
-            String[] parts = line.split("(\\s)+");
-
-            // 迷宫大小
-            int row = Integer.parseInt(parts[0]);
-            int col = Integer.parseInt(parts[1]);
-            // 剩余时间
-            int time = Integer.parseInt(parts[2]);
             // redraiment的开始位置
             int px = 0;
             int py = 0;
@@ -36,7 +34,7 @@ public class Main {
 
             char[][] maze = new char[row][col];
             for (int i = 0; i < row; i++) {
-                line = scanner.nextLine();
+                String line = scanner.next();
                 maze[i] = new char[col];
                 for (int j = 0; j < col; j++) {
                     maze[i][j] = line.charAt(j);
@@ -51,14 +49,13 @@ public class Main {
             }
 
             System.out.println(findPath(maze, px, py, sx, sy, time));
-
         }
 
         scanner.close();
     }
 
     /**
-     * 迷宫找最短的路径
+     * 迷宫找最短的路径，使用广度优先遍历
      *
      * @param maze 迷宫
      * @param px   redraiment的开始位置。横坐标
@@ -74,32 +71,71 @@ public class Main {
         int row = maze.length;
         int col = maze[0].length;
 
-        // 访问标记数组
-        boolean[][] visit = new boolean[row][col];
-        for (int i = 0; i < row; i++) {
-            visit[i] = new boolean[col];
-            for (int j = 0; j < col; j++) {
-                if (maze[i][j] == '*') {
-                    visit[i][j] = true;
-                }
-            }
-        }
-
 
         // 记录广度优先处理的，当前要处理的坐标
-        Queue<Integer> curr = new LinkedList<>();
+        List<Integer> curr = new LinkedList<>();
         // 记录广度优先处理的，下一圈的坐标
-        Queue<Integer> next = new LinkedList<>();
+        List<Integer> next = new LinkedList<>();
 
         curr.add(px);
         curr.add(py);
+        // 标记已经访问的位置
+        maze[px][py] = '*';
 
         while (!curr.isEmpty()) {
-            px = curr.remove();
-            py = curr.remove();
+            px = curr.remove(0);
+            py = curr.remove(0);
+
 
             if (px == sx && py == sy) {
                 return "YES";
+            }
+
+//            System.out.println("(" + px + ", " + py + ")");
+
+            // 往上走
+            if (px - 1 >= 0 && maze[px - 1][py] != '*') {
+                next.add(px - 1);
+                next.add(py);
+                maze[px - 1][py] = '*';
+            }
+
+            // 往右走
+            if (py + 1 < col && maze[px][py + 1] != '*') {
+                next.add(px);
+                next.add(py + 1);
+                maze[px][py + 1] = '*';
+            }
+
+            // 往下走
+            if (px + 1 < row && maze[px + 1][py] != '*') {
+                next.add(px + 1);
+                next.add(py);
+                maze[px + 1][py] = '*';
+            }
+
+            // 往左走
+            if (py - 1 >= 0 && maze[px][py - 1] != '*') {
+                next.add(px);
+                next.add(py - 1);
+                maze[px][py - 1] = '*';
+            }
+
+            // 当前层处理完
+            if (curr.isEmpty()) {
+                // 剩下的时间减少
+                time--;
+
+                // 时间用完了还没有找到
+                if (time < 0) {
+                    return "NO";
+                }
+                // 处理下一层
+                else {
+                    List<Integer> queue = curr;
+                    curr = next;
+                    next = queue;
+                }
             }
         }
 

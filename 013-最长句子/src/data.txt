@@ -1,0 +1,16 @@
+1
+hello world
+3
+I love
+love you
+love me
+9
+A B
+B C
+C D
+B D
+E F
+F G
+C E
+I B
+A F

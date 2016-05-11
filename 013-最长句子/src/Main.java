@@ -26,8 +26,6 @@ public class Main {
     private static class V {
         // 顶点的名称
         private String n;
-
-        private V p;
         // 邻接点
         private final Set<V> ADJ = new HashSet<>();
 
@@ -38,7 +36,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data2.txt"));
         while (scanner.hasNext()) {
             // 创建一个图对象
             G g = new G();
@@ -57,6 +55,7 @@ public class Main {
 
     /**
      * 求图g最长路径的长度
+     * TIP: 这是一个非常耗时的方法
      *
      * @param g 图
      * @return 最长路径的长度

@@ -124,7 +124,10 @@ public class Main3 {
      * @param g 图
      */
     private static void update(V a, V b, G g) {
+        // 原先以a为终点的最长线段包含的顶点数，再加上1，表示从包含(a, b)，
+        // 以b为终点的最长线段包含的顶点数
         int lenA = a.v + 1;
+        // 以b为终点的最长线段包含的顶点数
         int lenB = b.v;
 
         if (lenA > lenB) {

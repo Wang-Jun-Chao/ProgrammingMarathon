@@ -66,9 +66,10 @@ public class Main2 {
      * @param graph  有向图
      */
     private static void visitAll(String a, String b, Map<String, Integer> vertex, Map<String, List<String>> graph) {
-        // 原先以b为终点的最长线段长度
+        // 以b为终点的最长线段包含的顶点数
         int val = vertex.get(b);
-        // 原先以a为终点的最长线段长度，再多出一个顶点b接在a后后面，则新的最长长度
+        // 原先以a为终点的最长线段包含的顶点数，再加上1，表示从包含(a, b)，
+        // 以b为终点的最长线段包含的顶点数
         int t = vertex.get(a) + 1;
         // 记录以b为终点的最长有向线段的顶点数
         if (val < t) {

@@ -23,8 +23,8 @@ public class Main2 {
 
     public static void main(String[] args) {
 
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int row = scanner.nextInt();
             int col = scanner.nextInt();
@@ -32,7 +32,7 @@ public class Main2 {
 
             for (int i = 0; i < row; i++) {
                 String s = scanner.next();
-                for (int j = 0; j < s.length(); j++) {
+                for (int j = 0; j < col; j++) {
                     matrix[i][j] = s.charAt(j);
                 }
             }
@@ -47,33 +47,44 @@ public class Main2 {
         if (matrix == null || matrix.length <= 0) {
             return 0;
         }
-        int[][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
         int row = matrix.length;
         int col = matrix[0].length;
 
+        // 记录起始位置
         int sx = -1;
         int sy = -1;
-        int counts = 0;
-        boolean flag = false;
 
-        for (int i = 0; !flag && i < row; i++) {
+        // 记录最多可以走的步数
+        int counts = 0;
+
+        // 移动的四个方向
+        int[][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        // 找起始位置
+        for (int i = 0; sx == -1 && i < row; i++) {
             for (int j = 0; j < col; j++) {
                 if (matrix[i][j] == '@') {
                     sx = j;
                     sy = i;
-                    flag = true;
                     break;
                 }
             }
         }
-        if (!flag) {
+
+        if (sx == -1) {
             return 0;
         }
+
+        // 记录已经走过的点
         Queue<P> queue = new LinkedList<>();
         queue.add(new P(sx, sy));
-
+        // 记录当前的点
         P curr;
+
+
+        // 队列不为空
         while (!queue.isEmpty()) {
+            // 删除队头元素
             curr = queue.poll();
             counts++;
             for (int i = 0; i < 4; i++) {
@@ -87,8 +98,5 @@ public class Main2 {
             }
         }
         return counts;
-
     }
-
-
 }

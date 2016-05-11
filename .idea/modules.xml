@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/012-Hero/012-Hero.iml" filepath="$PROJECT_DIR$/012-Hero/012-Hero.iml" />
       <module fileurl="file://$PROJECT_DIR$/013-最长句子/013-最长句子.iml" filepath="$PROJECT_DIR$/013-最长句子/013-最长句子.iml" />
       <module fileurl="file://$PROJECT_DIR$/014-红与黑/014-红与黑.iml" filepath="$PROJECT_DIR$/014-红与黑/014-红与黑.iml" />
+      <module fileurl="file://$PROJECT_DIR$/015-走迷宫/015-走迷宫.iml" filepath="$PROJECT_DIR$/015-走迷宫/015-走迷宫.iml" />
     </modules>
   </component>
 </project>

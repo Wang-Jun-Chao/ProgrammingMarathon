@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data2.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
         int group = scanner.nextInt();
         for (int i = 0; i < group; i++) {
             // 用户个数
@@ -35,14 +35,6 @@ public class Main {
                 pairs.add(scanner.nextInt() - 1);
             }
 
-//            for (int[] line : edge) {
-//                for (int e : line) {
-//                    System.out.print(e + " ");
-//                }
-//                System.out.println();
-//            }
-//            System.out.println();
-
             // 对输入的关系矩阵进行处理(v, v)设置为1，(v, w)不直接可达的设置为Integer.MAX_VALUE
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k < n; k++) {
@@ -56,22 +48,26 @@ public class Main {
 
 
             List<Integer> result = floyd(edge, pairs);
+//            List<Integer> result = dijkstra(edge, pairs);
 
             // 输入结果，因求出的是(v,w)之前的边的数目，它们之前的顶点数就是最少的联系人数目
             // 最少的联系人数目=(v, w)最少的边数-1
             for (Integer r : result) {
-                if (r != Integer.MAX_VALUE) {
-
+                if (r < Integer.MAX_VALUE) {
                     System.out.println(r - 1);
                 } else {
                     System.out.println("Sorry");
                 }
             }
-
         }
 
         scanner.close();
     }
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 解法一：Floyd方法求任意两点间的距离
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * 使用Floyd算法求图任意两点之间的最短距离
@@ -81,19 +77,6 @@ public class Main {
      * @return (v, w)的最短路路径
      */
     private static List<Integer> floyd(int[][] edge, List<Integer> pairs) {
-
-//        for (int[] line : edge) {
-//            for (int e : line) {
-//                if (e != Integer.MAX_VALUE) {
-//                    System.out.print(e + " ");
-//                } else {
-//                    System.out.print("∞ ");
-//                }
-//            }
-//            System.out.println();
-//        }
-//        System.out.println();
-//        System.out.println(pairs);
 
         int MAX = Integer.MAX_VALUE;
         // 顶点数
@@ -122,19 +105,6 @@ public class Main {
             }
         }
 
-//        System.out.println("\n初始化A后");
-//        for (int[] line : edge) {
-//            for (int e : line) {
-//                if (e != Integer.MAX_VALUE) {
-//                    System.out.print(e + " ");
-//                } else {
-//                    System.out.print("∞ ");
-//                }
-//            }
-//            System.out.println();
-//        }
-
-
         // /从A(-1)递推到A(0), A(1), ..., A(n-1),或者理解成依次将v0,v1,...,v(n-1)作为中间顶点
         for (int k = 0; k < N; k++) {
             for (int i = 0; i < N; i++) {
@@ -153,19 +123,6 @@ public class Main {
             }
         }
 
-//        System.out.println("\n求值后");
-//        for (int[] line : A) {
-//            for (int e : line) {
-//                if (e != Integer.MAX_VALUE) {
-//                    System.out.print(e + " ");
-//                } else {
-//                    System.out.print("∞ ");
-//                }
-//            }
-//            System.out.println();
-//        }
-
-
         List<Integer> result = new LinkedList<>();
         while (!pairs.isEmpty()) {
             int x = pairs.remove(0);
@@ -173,8 +130,110 @@ public class Main {
             result.add(A[x][y]);
         }
 
-//        System.out.println(result);
+        return result;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 解法二：Dijkstra方法求任意两点间的距离
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    /**
+     * 使用Dijkstra算法求图任意两点之间的最短距离
+     *
+     * @param edge  图的邻接矩阵
+     * @param pairs 所要求的(v, w)点的集合
+     * @return (v, w)的最短路路径
+     */
+    private static List<Integer> dijkstra(int[][] edge, List<Integer> pairs) {
+
+        int N = edge.length;
+        int MAX = Integer.MAX_VALUE;
+        // 标记顶点是否已经访问过
+        boolean[] S = new boolean[N];
+        // 记录起点到各点的最短距离
+        int[][] DIST = new int[N][N];
+        // 记录前驱顶点，通过找前驱可以找到从(v, w)的最短路径的走法，在本题中可以不使用
+        int[][] PREV = new int[N][N];
+
+        List<Integer> result = new ArrayList<>();
+
+        // 处理每一个(v, w)
+        for (int v = 0; v < N; v++) {
+            DIST[v] = new int[N];
+            PREV[v] = new int[N];
+
+            // 处理第一个点
+            for (int i = 0; i < N; i++) {
+                S[i] = false;
+                DIST[v][i] = edge[v][i];
+                // 如果是最大值，说明(0, i)不存在。所以PREV[i]不存在
+                if (DIST[v][i] == MAX) {
+                    PREV[v][i] = -1;
+                } else {
+                    PREV[v][i] = 0;
+                }
+            }
+
+            // 标记v号顶点已经处理过
+            S[v] = true;
+
+            // 处理其余的点
+            for (int i = 1; i < N; i++) {
+                int min = MAX;
+                int u = 0;
+
+                // 找未访问过的顶点j，并且DIST[j]的值最小
+                for (int j = 0; j < N; j++) {
+                    if (!S[j] && DIST[v][j] < min) {
+                        u = j;
+                        min = DIST[v][j];
+                    }
+                }
+
+                // 标记u已经被访问过了
+                S[u] = true;
+
+                for (int j = 0; j < N; j++) {
+                    // j没有被访问过，并且(u, j)可达
+                    if (!S[j] && edge[u][j] < MAX) {
+                        int weight = DIST[v][u] + edge[u][j];
+                        // 从0->...->u->j比0->...->j（其它路径）短
+                        if (DIST[v][u] < MAX && edge[u][j] < MAX && weight < DIST[v][j]) {
+                            DIST[v][j] = weight;
+                            // j是通过u访问到的
+                            PREV[v][j] = u;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        for (int i = 0; i < pairs.size(); i += 2) {
+            int v = pairs.get(i);
+            int w = pairs.get(i + 1);
+            result.add(DIST[v][w]);
+        }
 
         return result;
+    }
+
+
+    private static void print(int[][] arr) {
+        for (int[] line : arr) {
+            print(line);
+        }
+    }
+
+    private static void print(int[] arr) {
+        for (int val : arr) {
+            if (val != Integer.MAX_VALUE) {
+                System.out.print(val + " ");
+            } else {
+                System.out.print("- ");
+            }
+        }
+        System.out.println();
     }
 }

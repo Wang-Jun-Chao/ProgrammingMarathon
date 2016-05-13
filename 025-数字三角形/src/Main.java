@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             int[][] matrix = new int[n][];
@@ -27,17 +27,26 @@ public class Main {
         scanner.close();
     }
 
+    /**
+     * 找最大值
+     *
+     * @param matrix 正数对角矩阵
+     * @return 最大值
+     */
     private static int maxSum(int[][] matrix) {
 
         int row = matrix.length;
 
-        // 求第一列和(i, i)
+        // 第一个元素不用求最大值
+
+        // 求第一列和对象线最大值
         for (int i = 1; i < row; i++) {
             matrix[i][0] += matrix[i - 1][0];
             matrix[i][i] += matrix[i - 1][i - 1];
         }
 
 
+        // 最其它元素的最大值
         for (int i = 2; i < row; i++) {
             for (int j = 1; j < i; j++) {
                 matrix[i][j] += Math.max(matrix[i - 1][j - 1], matrix[i - 1][j]);

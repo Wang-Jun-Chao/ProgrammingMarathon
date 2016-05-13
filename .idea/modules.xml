@@ -24,6 +24,7 @@
       <module fileurl="file://$PROJECT_DIR$/020-小世界现象/020-小世界现象.iml" filepath="$PROJECT_DIR$/020-小世界现象/020-小世界现象.iml" />
       <module fileurl="file://$PROJECT_DIR$/021-数据库连接池/021-数据库连接池.iml" filepath="$PROJECT_DIR$/021-数据库连接池/021-数据库连接池.iml" />
       <module fileurl="file://$PROJECT_DIR$/022-网页浏览历史/022-网页浏览历史.iml" filepath="$PROJECT_DIR$/022-网页浏览历史/022-网页浏览历史.iml" />
+      <module fileurl="file://$PROJECT_DIR$/023-换零钱/023-换零钱.iml" filepath="$PROJECT_DIR$/023-换零钱/023-换零钱.iml" />
     </modules>
   </component>
 </project>

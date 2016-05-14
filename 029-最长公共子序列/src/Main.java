@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             String ms = scanner.next();
             String ns = scanner.next();
@@ -29,16 +29,17 @@ public class Main {
      * @return 最长公共子序列的长度
      */
     private static int lcs(String ms, String ns) {
+
         int m = ms.length() + 1;
         int n = ns.length() + 1;
 
         // 创建二维数组，初始值为0
-        int[][] d = new int[n][m];
+        int[][] d = new int[m][n];
         for (int i = 0; i < m; i++) {
             d[i] = new int[n];
         }
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 // 对应到字串串中的位置
                 int x = i - 1;
@@ -54,6 +55,4 @@ public class Main {
 
         return d[m - 1][n - 1];
     }
-
-
 }

@@ -32,6 +32,9 @@
       <module fileurl="file://$PROJECT_DIR$/028-最长上升子序列/028-最长上升子序列.iml" filepath="$PROJECT_DIR$/028-最长上升子序列/028-最长上升子序列.iml" />
       <module fileurl="file://$PROJECT_DIR$/029-最长公共子序列/029-最长公共子序列.iml" filepath="$PROJECT_DIR$/029-最长公共子序列/029-最长公共子序列.iml" />
       <module fileurl="file://$PROJECT_DIR$/030-滑雪/030-滑雪.iml" filepath="$PROJECT_DIR$/030-滑雪/030-滑雪.iml" />
+      <module fileurl="file://$PROJECT_DIR$/031-NowCoder的密码/031-NowCoder的密码.iml" filepath="$PROJECT_DIR$/031-NowCoder的密码/031-NowCoder的密码.iml" />
+      <module fileurl="file://$PROJECT_DIR$/032-二叉树/032-二叉树.iml" filepath="$PROJECT_DIR$/032-二叉树/032-二叉树.iml" />
+      <module fileurl="file://$PROJECT_DIR$/033-八皇后问题/033-八皇后问题.iml" filepath="$PROJECT_DIR$/033-八皇后问题/033-八皇后问题.iml" />
     </modules>
   </component>
 </project>

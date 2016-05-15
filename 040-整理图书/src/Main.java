@@ -19,21 +19,28 @@ public class Main {
         private String name;
         // 图书种类
         private String type;
+
+        private int compare(Book other) {
+            if (other == null) {
+                return -1;
+            }
+
+            // 忽略大小写比较
+            int v = this.type.compareToIgnoreCase(other.type);
+            if (v == 0) {
+                return this.name.compareToIgnoreCase(other.name);
+            } else {
+                return v;
+            }
+        }
     }
 
-    /**
-     * 排序枚举对象
-     */
-    private static enum Sort {
-        // 按图书名排序
-        NAME,
-        // 按图书类型排序
-        TYPE
-    }
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data2.txt"));
+
+
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             Book[] books = new Book[n];
@@ -43,9 +50,9 @@ public class Main {
                 books[i].name = scanner.next();
                 books[i].type = scanner.next();
             }
-            List<String> rst = arrangeBook(books);
+            List<String> tmp = arrangeBook(books);
 
-            for (String s : rst) {
+            for (String s : tmp) {
                 System.out.println(s);
             }
             System.out.println();
@@ -56,8 +63,7 @@ public class Main {
 
     private static List<String> arrangeBook(Book[] books) {
 
-        sort(books, Sort.TYPE);
-        sort(books, Sort.NAME);
+        quickSort(books, 0, books.length - 1);
 
         List<String> rst = new ArrayList<>();
 
@@ -68,15 +74,6 @@ public class Main {
         return rst;
     }
 
-    /**
-     * 按排序类型对书本进行排序
-     *
-     * @param books 书本数组
-     * @param type  排序类型
-     */
-    private static void sort(Book[] books, Sort type) {
-        quickSort(books, 0, books.length - 1, type);
-    }
 
     /**
      * 快速排序
@@ -84,50 +81,28 @@ public class Main {
      * @param books 书本数组
      * @param left  第一个待排序数组的下标
      * @param right 最后一个待排序数组的下标
-     * @param type  排序类型
      */
-    private static void quickSort(Book[] books, int left, int right, Sort type) {
+    private static void quickSort(Book[] books, int left, int right) {
         if (left < right) {
             Book pivot = books[left];
             int lo = left;
             int hi = right;
 
             while (lo < hi) {
-                while (lo < hi && compare(books[hi], pivot, type) >= 0) {
+                while (lo < hi && books[hi].compare(pivot) >= 0) {
                     hi--;
                 }
-
                 books[lo] = books[hi];
-                while (lo < hi && compare(books[lo], pivot, type) <= 0) {
+
+                while (lo < hi && books[lo].compare(pivot) <= 0) {
                     lo++;
                 }
-
                 books[hi] = books[lo];
             }
 
             books[lo] = pivot;
-            quickSort(books, left, lo - 1, type);
-            quickSort(books, lo + 1, right, type);
+            quickSort(books, left, lo - 1);
+            quickSort(books, lo + 1, right);
         }
     }
-
-    /**
-     * 比较方法
-     *
-     * @param x    图书
-     * @param y    图书
-     * @param type 排序类型
-     * @return 比较，x比y大，返回-1，相等返回0，x比y小，返回1
-     */
-    private static int compare(Book x, Book y, Sort type) {
-        switch (type) {
-            case NAME:
-                return y.name.compareTo(x.name);
-            case TYPE:
-                return y.type.compareTo(x.type);
-        }
-
-        return -1;
-    }
-
 }

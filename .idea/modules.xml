@@ -45,6 +45,9 @@
       <module fileurl="file://$PROJECT_DIR$/041-最短前缀/041-最短前缀.iml" filepath="$PROJECT_DIR$/041-最短前缀/041-最短前缀.iml" />
       <module fileurl="file://$PROJECT_DIR$/042-狐狸和绳子/042-狐狸和绳子.iml" filepath="$PROJECT_DIR$/042-狐狸和绳子/042-狐狸和绳子.iml" />
       <module fileurl="file://$PROJECT_DIR$/043-英文金曲大赛/043-英文金曲大赛.iml" filepath="$PROJECT_DIR$/043-英文金曲大赛/043-英文金曲大赛.iml" />
+      <module fileurl="file://$PROJECT_DIR$/044-鹊桥相会/044-鹊桥相会.iml" filepath="$PROJECT_DIR$/044-鹊桥相会/044-鹊桥相会.iml" />
+      <module fileurl="file://$PROJECT_DIR$/045-Homework/045-Homework.iml" filepath="$PROJECT_DIR$/045-Homework/045-Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/046-压缩数据/046-压缩数据.iml" filepath="$PROJECT_DIR$/046-压缩数据/046-压缩数据.iml" />
     </modules>
   </component>
 </project>

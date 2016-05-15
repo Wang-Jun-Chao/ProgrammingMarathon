@@ -12,25 +12,26 @@
 
 
 ##输出描述:
-对应每一组数据，按照要求先按照类别排序（大小写无关），再按照书名排序（大小写无关），最后输出排好序的书名，每一个书名占一行。
+    对应每一组数据，按照要求先按照类别排序（大小写无关），再按照书名排序（大小写无关），最后输出排好序的书名，
+    每一个书名占一行。
 
-每一组数据之后输出一个空行做分隔符。
+    每一组数据之后输出一个空行做分隔符。
 
-输入例子:
-3
-JavaScriptInAction Programming
-OnLisp Lisp
-LetOverLambda Lisp
-3
-abc ZZZ
-XXX AAA
-DEF AAA
+##输入例子:
+    3
+    JavaScriptInAction Programming
+    OnLisp Lisp
+    LetOverLambda Lisp
+    3
+    abc ZZZ
+    XXX AAA
+    DEF AAA
 
-输出例子:
-LetOverLambda
-OnLisp
-JavaScriptInAction
+##输出例子:
+    LetOverLambda
+    OnLisp
+    JavaScriptInAction
 
-DEF
-XXX
-abc
+    DEF
+    XXX
+    abc

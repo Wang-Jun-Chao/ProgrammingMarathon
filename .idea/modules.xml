@@ -49,6 +49,8 @@
       <module fileurl="file://$PROJECT_DIR$/045-Homework/045-Homework.iml" filepath="$PROJECT_DIR$/045-Homework/045-Homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/046-压缩数据/046-压缩数据.iml" filepath="$PROJECT_DIR$/046-压缩数据/046-压缩数据.iml" />
       <module fileurl="file://$PROJECT_DIR$/047-发工资/047-发工资.iml" filepath="$PROJECT_DIR$/047-发工资/047-发工资.iml" />
+      <module fileurl="file://$PROJECT_DIR$/048-发放贷款/048-发放贷款.iml" filepath="$PROJECT_DIR$/048-发放贷款/048-发放贷款.iml" />
+      <module fileurl="file://$PROJECT_DIR$/049-最佳投资/049-最佳投资.iml" filepath="$PROJECT_DIR$/049-最佳投资/049-最佳投资.iml" />
     </modules>
   </component>
 </project>

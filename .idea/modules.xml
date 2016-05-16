@@ -54,6 +54,8 @@
       <module fileurl="file://$PROJECT_DIR$/050-最大收益/050-最大收益.iml" filepath="$PROJECT_DIR$/050-最大收益/050-最大收益.iml" />
       <module fileurl="file://$PROJECT_DIR$/050-砌墙/050-砌墙.iml" filepath="$PROJECT_DIR$/050-砌墙/050-砌墙.iml" />
       <module fileurl="file://$PROJECT_DIR$/051-All-in-All/051-All-in-All.iml" filepath="$PROJECT_DIR$/051-All-in-All/051-All-in-All.iml" />
+      <module fileurl="file://$PROJECT_DIR$/052-Base64/052-Base64.iml" filepath="$PROJECT_DIR$/052-Base64/052-Base64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/053-mkdir/053-mkdir.iml" filepath="$PROJECT_DIR$/053-mkdir/053-mkdir.iml" />
     </modules>
   </component>
 </project>

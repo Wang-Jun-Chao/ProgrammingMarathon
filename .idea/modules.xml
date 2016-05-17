@@ -65,6 +65,7 @@
       <module fileurl="file://$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" filepath="$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" />
       <module fileurl="file://$PROJECT_DIR$/062-最长回文/062-最长回文.iml" filepath="$PROJECT_DIR$/062-最长回文/062-最长回文.iml" />
       <module fileurl="file://$PROJECT_DIR$/063-电话号码/063-电话号码.iml" filepath="$PROJECT_DIR$/063-电话号码/063-电话号码.iml" />
+      <module fileurl="file://$PROJECT_DIR$/064-解读密码/064-解读密码.iml" filepath="$PROJECT_DIR$/064-解读密码/064-解读密码.iml" />
     </modules>
   </component>
 </project>

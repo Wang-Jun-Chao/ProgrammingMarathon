@@ -66,6 +66,7 @@
       <module fileurl="file://$PROJECT_DIR$/062-最长回文/062-最长回文.iml" filepath="$PROJECT_DIR$/062-最长回文/062-最长回文.iml" />
       <module fileurl="file://$PROJECT_DIR$/063-电话号码/063-电话号码.iml" filepath="$PROJECT_DIR$/063-电话号码/063-电话号码.iml" />
       <module fileurl="file://$PROJECT_DIR$/064-解读密码/064-解读密码.iml" filepath="$PROJECT_DIR$/064-解读密码/064-解读密码.iml" />
+      <module fileurl="file://$PROJECT_DIR$/065-骆驼命名法/065-骆驼命名法.iml" filepath="$PROJECT_DIR$/065-骆驼命名法/065-骆驼命名法.iml" />
     </modules>
   </component>
 </project>

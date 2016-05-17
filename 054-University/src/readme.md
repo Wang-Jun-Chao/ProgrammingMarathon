@@ -9,10 +9,10 @@
 
 　　现在他给出了字母的替换规则，如下所示，A被E替换，B被C替换，依次类推。
 ```
-    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-    E C F A J K L B D G H I V W Z Y M N O P Q R S T U X
-    a b c d e f g h i j k l m n o p q r s t u v w x y z
-    e r w q t y g h b n u i o p s j k d l f a z x c v m
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+E C F A J K L B D G H I V W Z Y M N O P Q R S T U X
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+e r w q t y g h b n u i o p s j k d l f a z x c v m
 ```
 
 ##输入描述:

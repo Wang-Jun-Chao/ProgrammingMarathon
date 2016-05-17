@@ -3,7 +3,7 @@
 #题目描述
 ```
   1   2   3
-    ABC EFF
+     ABC EFF
   4   5   6
  GHI JKL MNO
   7   8   9

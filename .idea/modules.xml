@@ -63,6 +63,8 @@
       <module fileurl="file://$PROJECT_DIR$/059-抄送列表/059-抄送列表.iml" filepath="$PROJECT_DIR$/059-抄送列表/059-抄送列表.iml" />
       <module fileurl="file://$PROJECT_DIR$/060-换座位/060-换座位.iml" filepath="$PROJECT_DIR$/060-换座位/060-换座位.iml" />
       <module fileurl="file://$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" filepath="$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" />
+      <module fileurl="file://$PROJECT_DIR$/062-最长回文/062-最长回文.iml" filepath="$PROJECT_DIR$/062-最长回文/062-最长回文.iml" />
+      <module fileurl="file://$PROJECT_DIR$/063-电话号码/063-电话号码.iml" filepath="$PROJECT_DIR$/063-电话号码/063-电话号码.iml" />
     </modules>
   </component>
 </project>

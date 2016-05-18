@@ -1,5 +1,3 @@
-<div style="font-family: Consolas">
-
 #天仙配
 
 ##题目描述
@@ -35,4 +33,3 @@
 ```
 2
 ```
-</div>

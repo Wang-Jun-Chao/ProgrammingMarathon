@@ -52,14 +52,14 @@
       <module fileurl="file://$PROJECT_DIR$/048-发放贷款/048-发放贷款.iml" filepath="$PROJECT_DIR$/048-发放贷款/048-发放贷款.iml" />
       <module fileurl="file://$PROJECT_DIR$/049-最佳投资/049-最佳投资.iml" filepath="$PROJECT_DIR$/049-最佳投资/049-最佳投资.iml" />
       <module fileurl="file://$PROJECT_DIR$/050-最大收益/050-最大收益.iml" filepath="$PROJECT_DIR$/050-最大收益/050-最大收益.iml" />
-      <module fileurl="file://$PROJECT_DIR$/051-砌墙/050-砌墙.iml" filepath="$PROJECT_DIR$/051-砌墙/050-砌墙.iml" />
-      <module fileurl="file://$PROJECT_DIR$/052-All-in-All/051-All-in-All.iml" filepath="$PROJECT_DIR$/052-All-in-All/051-All-in-All.iml" />
-      <module fileurl="file://$PROJECT_DIR$/053-Base64/054-Base64.iml" filepath="$PROJECT_DIR$/053-Base64/054-Base64.iml" />
-      <module fileurl="file://$PROJECT_DIR$/054-mkdir/053-mkdir.iml" filepath="$PROJECT_DIR$/054-mkdir/053-mkdir.iml" />
-      <module fileurl="file://$PROJECT_DIR$/055-University/054-University.iml" filepath="$PROJECT_DIR$/055-University/054-University.iml" />
-      <module fileurl="file://$PROJECT_DIR$/056-剪花布条/055-剪花布条.iml" filepath="$PROJECT_DIR$/056-剪花布条/055-剪花布条.iml" />
-      <module fileurl="file://$PROJECT_DIR$/057-叠筐/056-叠筐.iml" filepath="$PROJECT_DIR$/057-叠筐/056-叠筐.iml" />
-      <module fileurl="file://$PROJECT_DIR$/058-寄居蟹与海葵/057-寄居蟹与海葵.iml" filepath="$PROJECT_DIR$/058-寄居蟹与海葵/057-寄居蟹与海葵.iml" />
+      <module fileurl="file://$PROJECT_DIR$/051-砌墙/051-砌墙.iml" filepath="$PROJECT_DIR$/051-砌墙/051-砌墙.iml" />
+      <module fileurl="file://$PROJECT_DIR$/052-All-in-All/052-All-in-All.iml" filepath="$PROJECT_DIR$/052-All-in-All/052-All-in-All.iml" />
+      <module fileurl="file://$PROJECT_DIR$/053-Base64/053-Base64.iml" filepath="$PROJECT_DIR$/053-Base64/053-Base64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/054-mkdir/054-mkdir.iml" filepath="$PROJECT_DIR$/054-mkdir/054-mkdir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/055-University/055-University.iml" filepath="$PROJECT_DIR$/055-University/055-University.iml" />
+      <module fileurl="file://$PROJECT_DIR$/056-剪花布条/056-剪花布条.iml" filepath="$PROJECT_DIR$/056-剪花布条/056-剪花布条.iml" />
+      <module fileurl="file://$PROJECT_DIR$/057-叠筐/057-叠筐.iml" filepath="$PROJECT_DIR$/057-叠筐/057-叠筐.iml" />
+      <module fileurl="file://$PROJECT_DIR$/058-寄居蟹与海葵/058-寄居蟹与海葵.iml" filepath="$PROJECT_DIR$/058-寄居蟹与海葵/058-寄居蟹与海葵.iml" />
       <module fileurl="file://$PROJECT_DIR$/059-抄送列表/059-抄送列表.iml" filepath="$PROJECT_DIR$/059-抄送列表/059-抄送列表.iml" />
       <module fileurl="file://$PROJECT_DIR$/060-换座位/060-换座位.iml" filepath="$PROJECT_DIR$/060-换座位/060-换座位.iml" />
       <module fileurl="file://$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" filepath="$PROJECT_DIR$/061-收件人列表/061-收件人列表.iml" />
@@ -67,6 +67,8 @@
       <module fileurl="file://$PROJECT_DIR$/063-电话号码/063-电话号码.iml" filepath="$PROJECT_DIR$/063-电话号码/063-电话号码.iml" />
       <module fileurl="file://$PROJECT_DIR$/064-解读密码/064-解读密码.iml" filepath="$PROJECT_DIR$/064-解读密码/064-解读密码.iml" />
       <module fileurl="file://$PROJECT_DIR$/065-骆驼命名法/065-骆驼命名法.iml" filepath="$PROJECT_DIR$/065-骆驼命名法/065-骆驼命名法.iml" />
+      <module fileurl="file://$PROJECT_DIR$/066-五子棋/066-五子棋.iml" filepath="$PROJECT_DIR$/066-五子棋/066-五子棋.iml" />
+      <module fileurl="file://$PROJECT_DIR$/067-单词迷阵/067-单词迷阵.iml" filepath="$PROJECT_DIR$/067-单词迷阵/067-单词迷阵.iml" />
     </modules>
   </component>
 </project>

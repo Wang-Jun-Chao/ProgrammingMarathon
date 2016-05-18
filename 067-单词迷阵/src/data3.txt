@@ -1,0 +1,16 @@
+ababzzabab
+babazzbaba
+ababzzabab
+babazzbaba
+zzzzzzzzzz
+zzzzzzzzzz
+ababzzabab
+babazzbaba
+ababzzabab
+babazzbaba
+5
+a
+ab
+aba
+abab
+ababa

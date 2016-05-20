@@ -47,7 +47,7 @@ public class Main {
      * @return 停电的天数
      */
     private static int countOff(int month, int day) {
-        int idx = 0;
+        int idx;
         int count = 0;
 
         if (month > 9) {

@@ -73,6 +73,8 @@
       <module fileurl="file://$PROJECT_DIR$/069-广场舞/069-广场舞.iml" filepath="$PROJECT_DIR$/069-广场舞/069-广场舞.iml" />
       <module fileurl="file://$PROJECT_DIR$/070-求面积/070-求面积.iml" filepath="$PROJECT_DIR$/070-求面积/070-求面积.iml" />
       <module fileurl="file://$PROJECT_DIR$/071-螺旋数/071-螺旋数.iml" filepath="$PROJECT_DIR$/071-螺旋数/071-螺旋数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/072-黑白棋/072-黑白棋.iml" filepath="$PROJECT_DIR$/072-黑白棋/072-黑白棋.iml" />
+      <module fileurl="file://$PROJECT_DIR$/073-NowCoder的遭遇/073-NowCoder的遭遇.iml" filepath="$PROJECT_DIR$/073-NowCoder的遭遇/073-NowCoder的遭遇.iml" />
     </modules>
   </component>
 </project>

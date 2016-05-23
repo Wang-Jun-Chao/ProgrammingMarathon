@@ -85,6 +85,8 @@
       <module fileurl="file://$PROJECT_DIR$/081-显示器/081-显示器.iml" filepath="$PROJECT_DIR$/081-显示器/081-显示器.iml" />
       <module fileurl="file://$PROJECT_DIR$/082-棋盘上的距离/082-棋盘上的距离.iml" filepath="$PROJECT_DIR$/082-棋盘上的距离/082-棋盘上的距离.iml" />
       <module fileurl="file://$PROJECT_DIR$/083-目标柏林/083-目标柏林.iml" filepath="$PROJECT_DIR$/083-目标柏林/083-目标柏林.iml" />
+      <module fileurl="file://$PROJECT_DIR$/084-私钥/084-私钥.iml" filepath="$PROJECT_DIR$/084-私钥/084-私钥.iml" />
+      <module fileurl="file://$PROJECT_DIR$/085-装箱/085-装箱.iml" filepath="$PROJECT_DIR$/085-装箱/085-装箱.iml" />
     </modules>
   </component>
 </project>

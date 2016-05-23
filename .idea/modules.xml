@@ -82,6 +82,8 @@
       <module fileurl="file://$PROJECT_DIR$/078-程序员日/078-程序员日.iml" filepath="$PROJECT_DIR$/078-程序员日/078-程序员日.iml" />
       <module fileurl="file://$PROJECT_DIR$/079-美国节日/079-美国节日.iml" filepath="$PROJECT_DIR$/079-美国节日/079-美国节日.iml" />
       <module fileurl="file://$PROJECT_DIR$/080-下一个排列/080-下一个排列.iml" filepath="$PROJECT_DIR$/080-下一个排列/080-下一个排列.iml" />
+      <module fileurl="file://$PROJECT_DIR$/081-显示器/081-显示器.iml" filepath="$PROJECT_DIR$/081-显示器/081-显示器.iml" />
+      <module fileurl="file://$PROJECT_DIR$/082-棋盘上的距离/082-棋盘上的距离.iml" filepath="$PROJECT_DIR$/082-棋盘上的距离/082-棋盘上的距离.iml" />
     </modules>
   </component>
 </project>

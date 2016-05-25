@@ -15,8 +15,6 @@ public class Main {
     private static class Node {
         // 节点保存的值
         private int value;
-        //        // 节点在树中的高度，根节点是0层
-//        private int height;
         // 左子节点
         private Node left;
         // 右子节点

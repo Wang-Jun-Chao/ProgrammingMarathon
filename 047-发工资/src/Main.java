@@ -44,10 +44,8 @@ public class Main {
             for (int i = 0; i < TYPE.length && m != 0; i++) {
                 min += m / TYPE[i];
                 m %= TYPE[i];
-
             }
         }
         return min;
     }
-
 }

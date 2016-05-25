@@ -15,18 +15,50 @@ public class Main {
     private static class Node {
         // 节点保存的值
         private int value;
-        // 节点在树中的高度，根节点是0层
-        private int height;
+        //        // 节点在树中的高度，根节点是0层
+//        private int height;
         // 左子节点
         private Node left;
         // 右子节点
         private Node right;
+
+        Node(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "" + value;
+        }
+    }
+
+    /**
+     * 节点比较器类
+     */
+    private static class NodeComparator implements Comparator<Node> {
+        @Override
+        public int compare(Node o1, Node o2) {
+
+            if (o1 == null && o2 == null) {
+                return 0;
+            }
+
+            if (o1 == null) {
+                return -1;
+            }
+
+            if (o2 == null) {
+                return 1;
+            }
+
+            return o1.value - o2.value;
+        }
     }
 
     public static void main(String[] args) {
 
 //        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
 
@@ -48,41 +80,59 @@ public class Main {
      * @return
      */
     private static int minSpace(List<Integer> freq) {
-        // 用于创建哈夫曼树
-        List<Node> nodes = new ArrayList<>(freq.size());
-        // 用于保存所有的叶子节点
-        List<Node> leafs = new ArrayList<>(freq.size());
 
-        for (int i = 0, j = freq.size(); i < j; i++) {
-            Node node = new Node();
-            node.value = freq.get(i);
-
-            nodes.add(node);
-            leafs.add(node);
+        // 没有数据
+        if (freq == null || freq.size() == 0) {
+            return 0;
+        }
+        // 只有一个数据
+        else if (freq.size() == 1) {
+            return freq.get(0);
         }
 
-        Collections.sort(nodes, new Comparator<Node>() {
-            @Override
-            public int compare(Node u, Node v) {
-                if (u == null && v == null) {
-                    return 0;
-                }
+        SortedSet<Node> set = new TreeSet<>(new NodeComparator());
 
-                // null最小
-                if (u == null) {
-                    return -1;
-                }
+        for (int i : freq) {
+            set.add(new Node(i));
+        }
 
-                if (v == null) {
-                    return 1;
-                }
+        // 构造哈夫曼树
+        while (set.size() > 1) {
+            System.out.println(set);
+            Node n1 = set.first();
+            set.remove(n1);
+            Node n2 = set.first();
+            set.remove(n2);
 
-                return u.value = v.value;
+            Node n3 = new Node(n1.value + n2.value);
+            n3.left = n1;
+            n3.right = n2;
+            set.add(n3);
+        }
+
+        System.out.println(set);
+
+        int[] rst = {0};
+        minSpace(set.first(), 0, rst);
+        return rst[0];
+    }
+
+    private static void minSpace(Node root, int i, int[] rst) {
+
+        if (root != null) {
+            if (root.left == null && root.right == null) {
+                rst[0] += i * root.value;
+                return;
             }
-        });
 
-        return 0;
+            if (root.left != null) {
+                minSpace(root.left, i + 1, rst);
+            }
 
+            if (root.right != null) {
+                minSpace(root.right, i + 1, rst);
+            }
+        }
 
     }
 }

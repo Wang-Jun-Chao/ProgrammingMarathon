@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -9,8 +10,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             int[] arr = new int[n];
@@ -18,7 +19,9 @@ public class Main {
                 arr[i] = scanner.nextInt();
             }
 
-            System.out.println(lis2(arr));
+//            System.out.println(lis(arr));
+//            System.out.println(lis2(arr));
+            System.out.println(lis3(arr));
         }
 
         scanner.close();
@@ -29,6 +32,36 @@ public class Main {
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
+     * 【最优解法】
+     * 求最长公共子序列长度
+     *
+     * @param arr 数组
+     * @return 最长公共子序列长度
+     */
+    private static int lis3(int[] arr) {
+        int len;
+        int[] d = new int[arr.length + 1];
+
+        d[0] = -1;
+        d[1] = arr[0];
+        len = 1;
+
+        for (int i = 1, j; i < arr.length; i++) {
+            j = find(d, 0, len, arr[i]);
+            d[j] = arr[i];
+
+            if (j > len) {
+                len = j;
+            }
+        }
+
+        // d[1:len]就是所求的上升序列
+
+        return len;
+    }
+
+    /**
+     * 【次优解法】
      * 求最长公共子序列长度
      *
      * @param arr 数组
@@ -36,43 +69,48 @@ public class Main {
      */
     private static int lis2(int[] arr) {
         int[] len = new int[arr.length];
-        int[] d = new int[arr.length];
+        int[] d = new int[arr.length + 1];
+
+
+        // 使用最大值对d进行填充，保证在处理[0,k]时，单调递增
+        Arrays.fill(d, Integer.MAX_VALUE);
 
         d[0] = -1;
         d[1] = arr[0];
         len[0] = 1;
 
         for (int i = 1, j; i < arr.length; i++) {
-            j = find(d, 0, arr.length - 1, arr[i]);
+            j = find(d, 0, i, arr[i]);
             d[j] = arr[i];
             len[i] = j;
         }
 
-        int max = 1;
-        for (int i = 0; i < arr.length; i++) {
-            if (len[i] > max) {
-                max = len[i];
+        int max = 0;
+        for (int i : len) {
+            if (max < i) {
+                max = i;
             }
         }
 
         return max;
     }
 
-    private static int find(int[] arr, int left, int right, int n) {
+    private static int find(int[] arr, int lo, int hi, int val) {
         int mid;
 
-        while (left <= right) {
-            mid = left + (right - left) / 2;
-            if (n > arr[mid]) {
-                left = mid + 1;
-            } else if (n < arr[mid]) {
-                right = mid - 1;
+        while (lo <= hi) {
+            mid = lo + (hi - lo) / 2;
+
+            if (arr[mid] < val) {
+                lo = mid + 1;
+            } else if (arr[mid] > val) {
+                hi = mid - 1;
             } else {
                 return mid;
             }
         }
 
-        return left;
+        return lo;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////

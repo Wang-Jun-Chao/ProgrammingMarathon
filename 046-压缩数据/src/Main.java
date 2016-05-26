@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class Main {
 
+
     /**
      * 哈夫曼树的节点类
      */
@@ -55,8 +56,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
 
@@ -75,7 +76,7 @@ public class Main {
      * 使用霍夫曼编码需要多少位空间
      *
      * @param freq 字符出现次数
-     * @return
+     * @return 霍夫曼编码需要多少位空间
      */
     private static int minSpace(List<Integer> freq) {
 
@@ -88,30 +89,26 @@ public class Main {
             return freq.get(0);
         }
 
-        SortedSet<Node> set = new TreeSet<>(new NodeComparator());
+        // 使用优先队列，优先队列可以当作堆结构进行使用
+        Queue<Node> queue = new PriorityQueue<>(freq.size(), new NodeComparator());
 
         for (int i : freq) {
-            set.add(new Node(i));
+            queue.add(new Node(i));
         }
 
         // 构造哈夫曼树
-        while (set.size() > 1) {
-            System.out.println(set);
-            Node n1 = set.first();
-            set.remove(n1);
-            Node n2 = set.first();
-            set.remove(n2);
+        while (queue.size() > 1) {
+            Node n1 = queue.remove();
+            Node n2 = queue.remove();
 
             Node n3 = new Node(n1.value + n2.value);
             n3.left = n1;
             n3.right = n2;
-            set.add(n3);
+            queue.add(n3);
         }
 
-        System.out.println(set);
-
         int[] rst = {0};
-        minSpace(set.first(), 0, rst);
+        minSpace(queue.peek(), 0, rst);
         return rst[0];
     }
 

@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data3.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             int m = scanner.nextInt();
@@ -29,6 +29,7 @@ public class Main {
             } else {
                 System.out.println("No");
             }
+
         }
 
         scanner.close();
@@ -93,12 +94,12 @@ public class Main {
         while (!list.isEmpty()) {
             int v = list.remove(0);
             for (int i = 1; i <= n; i++) {
-                // 边(v, w)
-                int w = graph[v][i];
-                // 如果顶点w没有被访问过，就标记已经访问过，添加到访问队列中
-                if (vertex[w] == 0) {
-                    vertex[w] = 1;
-                    list.add(w);
+                // 边(v, i)，t为0说明v不能直接到i
+                int t = graph[v][i];
+                // 如果(v, i)可达，且顶点i没有被访问过，就标记已经访问过，添加到访问队列中
+                if (t != 0 && vertex[i] == 0) {
+                    vertex[i] = 1;
+                    list.add(i);
                 }
             }
         }

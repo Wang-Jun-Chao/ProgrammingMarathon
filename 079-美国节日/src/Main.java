@@ -70,10 +70,6 @@ public class Main {
         int n = 0;
         int w;
 
-        int c = year / 100;
-        int y = year % 100;
-
-
         for (int i = 1; i < 32; i++, day += step) {
 
             // 基姆拉尔森公式

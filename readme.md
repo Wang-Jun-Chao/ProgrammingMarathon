@@ -4,4 +4,5 @@
 | 名称 | 时间限制 | 空间限制 | 时间复杂度 | 空间复杂度 | 知识点 |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | [001-NowCoder猜想](http://blog.csdn.net/derrantcm/article/details/51512270) | 1秒 | 32768KB | O(n) | O(n) | 基础编程思想 |
+| [001-分遗产](http://blog.csdn.net/DERRANTCM/article/details/51523161) | 1秒 | 32768KB | O(n) | O(n) | 基础编程思想 |
 | []() |  |  |  |  |  |

@@ -170,6 +170,7 @@ public class Main {
                         x = 4;
                     }
                 }
+
                 chars[row][col] = D[d][x][y];
             }
         }

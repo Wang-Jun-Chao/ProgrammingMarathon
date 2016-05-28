@@ -39,6 +39,14 @@ public class Main {
         scanner.close();
     }
 
+    /**
+     * 黑白棋下子
+     *
+     * @param board 棋盘
+     * @param x     行号
+     * @param y     列号
+     * @param ch    棋子
+     */
     private static void play(char[][] board, int x, int y, char ch) {
         // 对应到棋盘的坐标
         x--;

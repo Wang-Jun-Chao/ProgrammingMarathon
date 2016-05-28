@@ -18,10 +18,8 @@ public class Main {
             String target = scanner.next();
 
             List<String> rst = reach(source, target);
-            for (String s : rst) {
-                System.out.print(s + " ");
-            }
-            System.out.println();
+
+            System.out.println(rst.get(0) + " " + rst.get(1) + " " + rst.get(2) + " " + rst.get(3));
         }
 
         scanner.close();
@@ -65,18 +63,16 @@ public class Main {
         }
 
         // 象的走法
-        // 最多只要折一次
+        // 直接可达
         if (diffX == diffY) {
             rst.add("1");
         }
-
-        // 要折一次
+        // 要折一次，最多只要折一次
         else if (Math.abs(diffX - diffY) % 2 == 0) {
             rst.add("2");
         } else {
             rst.add("Inf");
         }
-
 
         return rst;
     }

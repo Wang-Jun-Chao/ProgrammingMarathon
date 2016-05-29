@@ -14,6 +14,10 @@ public class Main {
         while (scanner.hasNext()) {
             int width = scanner.nextInt();
             int num = scanner.nextInt();
+
+            if (width <= 0 || num <= 0) {
+                break;
+            }
             int[][] birds = new int[num][2];
             for (int i = 0; i < num; i++) {
                 birds[i][0] = scanner.nextInt();
@@ -41,9 +45,9 @@ public class Main {
         int time = Integer.MAX_VALUE;
 
         for (int[] bird : birds) {
-            // 只在鸟的位置不在牛郎的位置前面，并且方向是到对岸，才进处理
+            // 只在鸟的位置不在牛郎的位置前面，并且方向是到对岸，才进行处理
             if (bird[0] <= 0 && bird[1] > 0) {
-                // 真正到对岸的时间就是所坐的鸟的起始位置到对岸的距离
+                // 真正到对岸的时间就是所坐的鸟的起始位置到对岸的距离除以鸟儿的速度
                 // 计算最后坐当前鸟儿到对岸所用的时间
                 int t = (width - bird[0]) / bird[1];
 

@@ -21,8 +21,6 @@ public class Main {
 
     /**
      * 计算[1-n]中包含数字1的数字个数
-     * <p>
-     * TODO 请高手解释下面的代码
      *
      * @param n 最在范围
      * @return 包含数字1的数字个数

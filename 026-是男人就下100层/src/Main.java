@@ -27,8 +27,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             int x = scanner.nextInt();
@@ -93,9 +93,9 @@ public class Main {
                     // 从第i层的左边下去
                     if (!left && between(cos[i].a, cos[j].a, cos[j].b)) {
                         // 从第i层的【左】边下去，并且通过第j层的【左】边再下去
-                        height[i][0] = Math.min(height[j][0] + (cos[i].a - cos[j].a) + diff, height[i][0]);
+                        height[i][0] = Math.min((cos[i].a - cos[j].a) + diff + height[j][0], height[i][0]);
                         // 从第i层的【左】边下去，并且通过第j层的【右】边再下去
-                        height[i][0] = Math.min(height[j][1] + (cos[j].b - cos[i].a) + diff, height[i][1]);
+                        height[i][0] = Math.min((cos[j].b - cos[i].a) + diff + height[j][1], height[i][0]);
 
                         // 第i层左边下到下一层已经处理
                         left = true;
@@ -104,9 +104,9 @@ public class Main {
                     // 从第i层的右边下去
                     if (!right && between(cos[i].b, cos[j].a, cos[j].b)) {
                         // 从第i层的【右】边下去，并且通过第j层的【左】边再下去
-                        height[i][1] = Math.min(height[j][0] + (cos[i].b - cos[j].a) + diff, height[i][0]);
+                        height[i][1] = Math.min((cos[i].b - cos[j].a) + diff + height[j][0], height[i][1]);
                         // 从第i层的【右】边下去，并且通过第j层的【右】边再下去
-                        height[i][1] = Math.min(height[j][1] + (cos[j].b - cos[i].b) + diff, height[i][1]);
+                        height[i][1] = Math.min((cos[j].b - cos[i].b) + diff + height[j][1], height[i][1]);
 
                         // 第i层右边下到下一层已经处理
                         right = true;

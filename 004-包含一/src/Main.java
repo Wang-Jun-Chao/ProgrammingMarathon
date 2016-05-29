@@ -20,6 +20,7 @@ public class Main {
     }
 
     /**
+     * 【方法一】
      * 计算[1-n]中包含数字1的数字个数
      *
      * @param n 最在范围
@@ -45,6 +46,7 @@ public class Main {
             if (cur == 0) {
                 continue;
             } else if (cur == 1) {
+                // onesPerI表示[1, i-1]含有1的个数，countedN表示比
                 result = onesPerI + countedN + 1;
             } else {
                 result += (cur - 1) * onesPerI + i;
@@ -57,4 +59,5 @@ public class Main {
 
         return result;
     }
+
 }

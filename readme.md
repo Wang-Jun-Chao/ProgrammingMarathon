@@ -3,6 +3,14 @@
 
 | 名称 | 时间限制 | 空间限制 | 时间复杂度 | 空间复杂度 | 知识点 |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| [001-NowCoder猜想](http://blog.csdn.net/derrantcm/article/details/51512270) | 1秒 | 32768KB | O(n) | O(n) | 基础编程思想 |
-| [001-分遗产](http://blog.csdn.net/DERRANTCM/article/details/51523161) | 1秒 | 32768KB | O(n) | O(n) | 基础编程思想 |
+| **[【001-NowCoder猜想>>>】](http://blog.csdn.net/derrantcm/article/details/51512270)** | 1秒 | 32768KB | O(n) | O(n) | 基础编程 |
+| **[【002-分遗产>>>】](http://blog.csdn.net/DERRANTCM/article/details/51523161)** | 1秒 | 32768KB | O(n) | O(n) | 基础编程 |
+| **[【003-素数和>>>】](http://blog.csdn.net/derrantcm/article/details/51530977)** | 1秒 | 32768KB | O(n) | O(n) | 查找 |
+| **[【004-包含一>>>】](http://blog.csdn.net/DERRANTCM/article/details/51533628)** | 1秒 | 32768KB | O(ln(n)) | O(1) | 基础数学 |
+| **[【005-猴子分桃>>>】](http://blog.csdn.net/DERRANTCM/article/details/51531458)** | 1秒 | 32768KB | O(n) | O(1) | 基础数学 |
+| **[【006-统计一>>>】](http://blog.csdn.net/DERRANTCM/article/details/51553158)** | 1秒 | 32768KB | O(n) | O(1) | 基础数学 |
+| **[【007-循环数>>>】](http://blog.csdn.net/derrantcm/article/details/51553197)** | 1秒 | 32768KB | O(n) | O(n) | 基础数学 |
+| **[【008-快到碗里来>>>】](http://blog.csdn.net/derrantcm/article/details/51610940)** | 1秒 | 32768KB | O(n) | O(n) | 基础数学 |
+| **[【009-数根>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626117)** | 1秒 | 32768KB | O(log(n)) | O(1) | 基础数学 |
+| **[【010-杨辉三角>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626282)** | 1秒 | 32768KB | O(n^2) | O(n^2) | 基础数学 |
 | []() |  |  |  |  |  |

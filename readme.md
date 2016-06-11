@@ -13,4 +13,5 @@
 | **[【008-快到碗里来>>>】](http://blog.csdn.net/derrantcm/article/details/51610940)** | 1秒 | 32768KB | O(n) | O(n) | 基础数学 |
 | **[【009-数根>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626117)** | 1秒 | 32768KB | O(log(n)) | O(1) | 基础数学 |
 | **[【010-杨辉三角>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626282)** | 1秒 | 32768KB | O(n^2) | O(n^2) | 基础数学 |
+| **[【011-鸽兔同校>>>】](http://blog.csdn.net/DERRANTCM/article/details/51643525)** | 1秒 | 32768KB | O(log(n)) | O(n) | 基础数学 |
 | []() |  |  |  |  |  |

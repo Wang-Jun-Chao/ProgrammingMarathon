@@ -12,8 +12,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             // 迷宫大小
             int col = scanner.nextInt();
@@ -25,7 +25,7 @@ public class Main {
                 break;
             }
 
-            // redraiment的开始位置
+            // NowCoder的开始位置
             int px = 0;
             int py = 0;
             // 公主的位置
@@ -58,8 +58,8 @@ public class Main {
      * 迷宫找最短的路径，使用广度优先遍历
      *
      * @param maze 迷宫
-     * @param px   redraiment的开始位置。横坐标
-     * @param py   redraiment的开始位置。纵坐标
+     * @param px   NowCoder的开始位置。横坐标
+     * @param py   NowCoder的开始位置。纵坐标
      * @param sx   公主的位置。横坐标
      * @param sy   公主的位置。纵坐标
      * @param time 剩余时间

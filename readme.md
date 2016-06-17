@@ -14,4 +14,8 @@
 | **[【009-数根>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626117)** | 1秒 | 32768KB | O(log(n)) | O(1) | 基础数学 |
 | **[【010-杨辉三角>>>】](http://blog.csdn.net/DERRANTCM/article/details/51626282)** | 1秒 | 32768KB | O(n^2) | O(n^2) | 基础数学 |
 | **[【011-鸽兔同校>>>】](http://blog.csdn.net/DERRANTCM/article/details/51643525)** | 1秒 | 32768KB | O(log(n)) | O(n) | 基础数学 |
+| **[【012-Hero>>>】](http://blog.csdn.net/derrantcm/article/details/51643557)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
+| **[【013-最长句子>>>】](http://blog.csdn.net/derrantcm/article/details/51643744)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
+| **[【014-红与黑>>>】](http://blog.csdn.net/DERRANTCM/article/details/51699871)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
+| **[【015-走迷宫>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
 | []() |  |  |  |  |  |

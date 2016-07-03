@@ -19,4 +19,10 @@
 | **[【013-最长句子>>>】](http://blog.csdn.net/derrantcm/article/details/51643744)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
 | **[【014-红与黑>>>】](http://blog.csdn.net/DERRANTCM/article/details/51699871)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
 | **[【015-走迷宫>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
+| **[【016-过年回家>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n^2) | O(n) | Dijkstra最短路径 |
+| **[【017-Emacs计算器>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 逆波兰式 |
+| **[【018-不喜欢括号>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 逆波兰式 |
+| **[【019-一笔画>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
+| **[【020-小世界现象>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n^3) | O(n^2) | Floyd算法 |
+| **[【021-数据库连接池>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 基础算法 |
 | []() |  |  |  |  |  |

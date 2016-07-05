@@ -25,4 +25,5 @@
 | **[【019-一笔画>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 广度优先遍历 |
 | **[【020-小世界现象>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n^3) | O(n^2) | Floyd算法 |
 | **[【021-数据库连接池>>>】](http://blog.csdn.net/DERRANTCM/article/details/51700045)** | 1秒 | 32768KB | O(n) | O(n) | 基础算法 |
+| **[【022-网页浏览历史>>>】](http://blog.csdn.net/derrantcm/article/details/51836061)** | 1秒 | 32768KB | O(n) | O(n) | 基础算法 |
 | []() |  |  |  |  |  |

@@ -13,8 +13,8 @@ public class Main {
     private final static int[] T = {1, 5, 10, 25, 50};
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
+        Scanner scanner = new Scanner(System.in);
+//        Scanner scanner = new Scanner(Main.class.getClassLoader().getResourceAsStream("data.txt"));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
 
